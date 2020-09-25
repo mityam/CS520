@@ -10,14 +10,19 @@ public class Banking {
 		// TODO Auto-generated method stub
 		JFrame f=new JFrame();
 		
+		//getting string input from user
 		String input = JOptionPane.showInputDialog("Enter amount in dollars");
 		int amount = Integer.parseInt(input);
 		System.out.println("Requested Amount = " + amount);
 		
-		int hundreds, fifties, twenties, tens, fives, twos, ones;
-		int remainingAmount;
+		//declaring all integers needed for the program
+		int hundreds, fifties, twenties, tens, fives, twos, ones, remainingAmount;
+		
+		//calculating remainder of division by 100
 		remainingAmount = amount%100;
+		//calculating number of hundreds in the amount
 		hundreds = (amount - remainingAmount)/100;
+		//Printing out to console number of hundreds and remainder
 		System.out.println("Hundreds = " + hundreds + ", RemainingAmount = " + remainingAmount);
 				
 		remainingAmount = amount%50;
@@ -44,6 +49,7 @@ public class Banking {
 		ones = (amount - remainingAmount)/1;
 		System.out.println("Ones = " + ones + ", RemainingAmount = " + remainingAmount);
 				
+		//Displaying all results in dialog pane
 		JOptionPane.showMessageDialog(f, "Hundreds=" + hundreds + "\nFifties=" + fifties + "\nTwenties=" + twenties + "\nTens=" + tens + "\nFives="+fives+"\nTwos=" + twos + "\nOnes="+ones);
 		
 		System.exit(0); 
