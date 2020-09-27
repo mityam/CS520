@@ -16,7 +16,6 @@ public class Triples {
 			
 			for (int y = 1; y <= 100; y++) 
 			{
-				
 				double sum = Math.pow(x, 2) + Math.pow(y, 2);
 				int z =  (int) Math.sqrt(sum);
 				//this string gets added to tripleList later inside If
@@ -31,10 +30,8 @@ public class Triples {
 					tripleCounter = ++tripleCounter;
 					//Adding x,y and z values as a string to list to check later if xyzString string is in this list and avoid duplicates
 					tripleList.add( xyzString );
-					System.out.println(tripleCounter + ")" + "        " + x + "     "+ y + "     " + z + "  sum=" + sum );
-					
+					System.out.println(tripleCounter + ")" + "        " + x + "     "+ y + "     " + z );
 					}
-				
 			} //end of inner loop
 		} //end of outer loop
 		
