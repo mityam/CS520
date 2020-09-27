@@ -24,7 +24,7 @@ public class Triples {
 				String reverseXYZString =  Integer.toString(y) + Integer.toString(x);
 				
 				// Checking here if the two integers x and y make an integer z based on x^2+y^2=z^2
-				//also checking if x and y are already on tripleList
+				//also checking if x and y are already on tripleList in reverse order
 				if  ( Math.pow(z, 2) == sum && (!tripleList.contains(reverseXYZString)))
 					{
 					tripleCounter = ++tripleCounter;
