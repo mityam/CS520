@@ -26,6 +26,5 @@ public class Triples {
 					}
 			} //end of inner loop
 		} //end of outer loop
-		System.exit(0);
 	}
 }
