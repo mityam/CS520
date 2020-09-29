@@ -24,7 +24,7 @@ public class Triples {
 				
 				if  ( Math.pow(z, 2) == sum )	
 					{
-					tripleCounter = ++tripleCounter;
+					++tripleCounter;
 					//Adding x,y and z values as a string to list to check later if xyzString string is in this list and avoid duplicates
 					//System.out.println(tripleCounter + ")" + "        " + x + "     "+ y + "     " + z );
 					System.out.printf("%3d) %4d %4d %4d\n", tripleCounter, x, y, z );
