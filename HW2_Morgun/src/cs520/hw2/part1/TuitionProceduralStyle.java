@@ -30,7 +30,7 @@ public class TuitionProceduralStyle {
 		JOptionPane.showMessageDialog(f, "Name of the second course = " + inputNameOf2ndcourse 
 				+ "\nTution of the first course = " + tutionOf2ndcourse );
 
-		
+	//using if else	structure for tuition comparison
 		if ( tutionOf1stcourse > tutionOf2ndcourse )
 			{
 			JOptionPane.showMessageDialog(f, "The 1st course tution is greater than the 2nd course tution by "
