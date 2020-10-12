@@ -5,19 +5,21 @@ public class Test {
 	public static void main(String[] args) {
 		
 		System.out.println ("Taking a regular course...");
+		//creating an object of Course class
 		Course currentCourse = new Course ("CS520",4,390);
 		System.out.println ("Printing...");
+		//using the overridden toString method
 		System.out.println (currentCourse.toString());
 		
 		System.out.println ("\nTaking a online course...");
+		//creating an object of OnlineCourse subclass
 		OnlineCourse currentOnlineCourse = new OnlineCourse ("CS520",4,760,60);
-		//System.out.println ("Printing...");
-		//System.out.println (currentOnlineCourse.toString());
 		
-		
+		//reassigning currentCourse object to currentOnlineCourse object
 		currentCourse = currentOnlineCourse;
-		//currentOnlineCourse = (OnlineCourse) currentCourse;
+		
 		System.out.println ("Printing...");
+		//testing toString method on currentCourse object; it uses child class OnlineCourse toString method
 		System.out.println (currentCourse.toString());
 	}
 
