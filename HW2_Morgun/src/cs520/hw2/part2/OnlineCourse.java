@@ -1,11 +1,14 @@
 package cs520.hw2.part2;
 
+//declaration of a child OnlineCourse class that inherits Course subclass
 public class OnlineCourse extends Course{
 	
 	private int technologyFee;
 	
+	//child class constructor
 	public OnlineCourse (String courseName, int courseNumberOfCredits, int courseCostPerCredit, int courseTechnologyFee)
 	{   
+		//invocation of super class constructor
 		super(courseName,courseNumberOfCredits,courseCostPerCredit);
 		this.setTechnologyFee (courseTechnologyFee);
 		System.out.println ("In OnlineCourse Constructor values set:");
@@ -21,11 +24,12 @@ public class OnlineCourse extends Course{
 	{
 		return this.technologyFee;
 	}
-	
+	//overriding  getTotalTuition method of superclass
 	public int getTotalTuition ()
 	{
 	 return this.getNumberOfCredits() *  this.getCostPerCredit() + this.getNumberOfCredits() * this.getTechnologyFee();
 	}
+	//overriding toString method
 	public String toString()
 	{
 		return "OnlineCourse:"+this.getName()+" @ $" + this.getTotalTuition();

@@ -2,11 +2,12 @@ package cs520.hw2.part2;
 
 public class Course {
 
+	//class fields declaration
 	private String name;
 	private int numberOfCredits;
 	private int costPerCredit;
 	
-	
+	//explicit class constructor
 	public Course (String courseName, int courseNumberOfCredits, int courseCostPerCredit )
 	{
 		this.setName(courseName);
@@ -16,7 +17,8 @@ public class Course {
 		System.out.println ("  CourseName = " + this.getName() + ", NumberOfCredits = "
 		+ this.getNumberOfCredits()+ ", CostPerCredit = $" + this.getCostPerCredit());
 	}
-		
+	
+	//all setters and getters below
 	public void setName (String courseName)
 	{
 		this.name = courseName;
@@ -42,10 +44,12 @@ public class Course {
 	{
 		return this.costPerCredit;
 	}
+	//method calculating course tuition
 	public int getTotalTuition ()
 	 {
 		 return this.getNumberOfCredits() *  this.getCostPerCredit();
 	 }
+	//overriding toString method
 	public String toString()
 	{
 		return "Course:"+this.getName()+" @ $" + this.getTotalTuition();
