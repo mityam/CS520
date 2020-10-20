@@ -27,7 +27,7 @@ public class OnlineCourse extends Course{
 	//overriding  getTotalTuition method of superclass
 	public int getTotalTuition ()
 	{
-	 return this.getNumberOfCredits() *  this.getCostPerCredit() + this.getNumberOfCredits() * this.getTechnologyFee();
+	 return super.getTotalTuition() + this.getNumberOfCredits() * this.getTechnologyFee();
 	}
 	//overriding toString method
 	public String toString()

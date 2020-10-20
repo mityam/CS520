@@ -13,14 +13,14 @@ public class Test {
 		
 		System.out.println ("\nTaking a online course...");
 		//creating an object of OnlineCourse subclass
-		OnlineCourse currentOnlineCourse = new OnlineCourse ("CS520",4,760,60);
+		Course currentOnlineCourse = new OnlineCourse ("CS520",4,760,60);
 		
 		//reassigning currentCourse object to currentOnlineCourse object
-		currentCourse = currentOnlineCourse;
+		//currentCourse = currentOnlineCourse;
 		
 		System.out.println ("Printing...");
 		//testing toString method on currentCourse object; it uses child class OnlineCourse toString method
-		System.out.println (currentCourse.toString());
+		System.out.println (currentOnlineCourse.toString());
 	}
 
 }
