@@ -29,7 +29,9 @@ public class Student {
 	//part2.1.d
 	public double computeAverage()
 	{
-		return (homework1 + homework2 + homework3 + homework4 + homework5 + homework6)/6;
+		double d = (Double.valueOf(homework1) + Double.valueOf(homework2) + Double.valueOf(homework3)
+		+ Double.valueOf(homework4) + Double.valueOf(homework5) + Double.valueOf(homework6))/6;
+		return d;
 	}
 
 	//part2.1.e
