@@ -1,11 +1,7 @@
 package cs520.hw4;
 
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Graphics;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-
 import javax.swing.JFrame;
 
 public class Legos1 extends JFrame{
