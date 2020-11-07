@@ -2,15 +2,23 @@ package cs520.hw4;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
+
 import javax.swing.JFrame;
 
-public class Legos1 extends JFrame{
+public class Legos2 extends JFrame{
 	//part1.a
 	private int startX, startY, legoWidth, legoHeight;
 	//part1.b
 	private int baseLength;
+	
+	private Color[] colorsArray = new Color[]{Color.red, Color.blue, Color.yellow, Color.green,
+						Color.pink,Color.black, Color.magenta, Color.orange, Color.cyan};
+	Random rand = new Random();
+	//int x = rand.nextInt(8);
+	
 	//part1.c
-	Legos1 ()
+	Legos2 ()
 	{
 		this.setTitle("Morgun's LEGOs");
 		this.startX = 20;
@@ -29,7 +37,7 @@ public class Legos1 extends JFrame{
 	    	int  horizontalShiftX = this.startX;
 	    	for (int j = 1; j <= this.baseLength; j++)
 		    {
-		    	g.setColor(( j % 2 == 0) ? Color.BLUE : Color.RED);
+		    	g.setColor(this.colorsArray[rand.nextInt(8)]);
 		      	g.fillRoundRect(horizontalShiftX, this.startY, this.legoWidth, this.legoHeight, 5, 5);
 		      	horizontalShiftX = horizontalShiftX + this.legoWidth;
 		    }
@@ -41,7 +49,7 @@ public class Legos1 extends JFrame{
 	
 	 public static void main(String[] args) {
 		
-	    Legos1 lego = new Legos1();
+	    Legos2 lego = new Legos2();
 	    lego.setSize(550, 325);
 	    lego.setVisible(true);
 

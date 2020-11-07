@@ -2,15 +2,23 @@ package cs520.hw4;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
+
 import javax.swing.JFrame;
 
-public class Legos1 extends JFrame{
+public class Legos3 extends JFrame{
 	//part1.a
 	private int startX, startY, legoWidth, legoHeight;
 	//part1.b
 	private int baseLength;
+	
+	private Color[] colorsArray = new Color[]{Color.red, Color.blue, Color.yellow, Color.green,
+						Color.pink,Color.black, Color.magenta, Color.orange, Color.cyan};
+	Random rand = new Random();
+	//int x = rand.nextInt(8);
+	
 	//part1.c
-	Legos1 ()
+	Legos3 ()
 	{
 		this.setTitle("Morgun's LEGOs");
 		this.startX = 20;
@@ -27,10 +35,15 @@ public class Legos1 extends JFrame{
 	    for  (int i = 1; i <= verticalBlocksNumber; i++)
 	    {	
 	    	int  horizontalShiftX = this.startX;
+	    	Color previousColor = null;
 	    	for (int j = 1; j <= this.baseLength; j++)
-		    {
-		    	g.setColor(( j % 2 == 0) ? Color.BLUE : Color.RED);
-		      	g.fillRoundRect(horizontalShiftX, this.startY, this.legoWidth, this.legoHeight, 5, 5);
+		    {	
+	    		Color currentColor = this.colorsArray[rand.nextInt(8)];
+	    		while ( currentColor.equals(previousColor) )
+	    				{currentColor = this.colorsArray[rand.nextInt(8)];}
+	    		previousColor = currentColor;
+	    		g.setColor(currentColor);
+		    	g.fillRoundRect(horizontalShiftX, this.startY, this.legoWidth, this.legoHeight, 5, 5);
 		      	horizontalShiftX = horizontalShiftX + this.legoWidth;
 		    }
 		    this.startY = this.startY - this.legoHeight;
@@ -41,7 +54,7 @@ public class Legos1 extends JFrame{
 	
 	 public static void main(String[] args) {
 		
-	    Legos1 lego = new Legos1();
+	    Legos3 lego = new Legos3();
 	    lego.setSize(550, 325);
 	    lego.setVisible(true);
 
