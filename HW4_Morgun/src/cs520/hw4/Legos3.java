@@ -15,8 +15,7 @@ public class Legos3 extends JFrame{
 	private Color[] colorsArray = new Color[]{Color.red, Color.blue, Color.yellow, Color.green,
 						Color.pink,Color.black, Color.magenta, Color.orange, Color.cyan};
 	Random rand = new Random();
-	//int x = rand.nextInt(8);
-	
+		
 	//part1.c
 	Legos3 ()
 	{
@@ -29,8 +28,7 @@ public class Legos3 extends JFrame{
 	}
 	public void paint(Graphics g) {
 		    super.paint(g);
-		    
-		int verticalBlocksNumber = this.baseLength;
+			int verticalBlocksNumber = this.baseLength;
 			
 	    for  (int i = 1; i <= verticalBlocksNumber; i++)
 	    {	
@@ -38,9 +36,11 @@ public class Legos3 extends JFrame{
 	    	Color previousColor = null;
 	    	for (int j = 1; j <= this.baseLength; j++)
 		    {	
-	    		Color currentColor = this.colorsArray[rand.nextInt(8)];
+	    		//Use the length of the colors array as an argument (do not hard code the array length)
+	    		Color currentColor = this.colorsArray[rand.nextInt(colorsArray.length)];
+	    		//Compare current color with previous and keep generating another color while they match
 	    		while ( currentColor.equals(previousColor) )
-	    				{currentColor = this.colorsArray[rand.nextInt(8)];}
+	    				{currentColor = this.colorsArray[rand.nextInt(colorsArray.length)];}
 	    		previousColor = currentColor;
 	    		g.setColor(currentColor);
 		    	g.fillRoundRect(horizontalShiftX, this.startY, this.legoWidth, this.legoHeight, 5, 5);
@@ -57,6 +57,7 @@ public class Legos3 extends JFrame{
 	    Legos3 lego = new Legos3();
 	    lego.setSize(550, 325);
 	    lego.setVisible(true);
+	    lego.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
 

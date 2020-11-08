@@ -19,11 +19,10 @@ public class Legos1 extends JFrame{
 		this.legoHeight = 20;
 		this.baseLength = 10;
 	}
+	//part1.d
 	public void paint(Graphics g) {
-		    super.paint(g);
-		    
+	    super.paint(g);
 		int verticalBlocksNumber = this.baseLength;
-			
 	    for  (int i = 1; i <= verticalBlocksNumber; i++)
 	    {	
 	    	int  horizontalShiftX = this.startX;
@@ -40,11 +39,11 @@ public class Legos1 extends JFrame{
 	 }	
 	
 	 public static void main(String[] args) {
-		
+		//part1.c
 	    Legos1 lego = new Legos1();
 	    lego.setSize(550, 325);
 	    lego.setVisible(true);
-
-	}
+	    lego.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	 }
 
 }
