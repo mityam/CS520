@@ -2,9 +2,13 @@ package cs520.hw4;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.JFrame;
 
-public class Legos1 extends JFrame{
+public class Legos1 extends JFrame implements MouseListener{
 	//part1.a
 	private int startX, startY, legoWidth, legoHeight;
 	//part1.b
@@ -18,6 +22,7 @@ public class Legos1 extends JFrame{
 		this.legoWidth = 50;
 		this.legoHeight = 20;
 		this.baseLength = 10;
+		this.addMouseListener(this);
 	}
 	//part1.d
 	public void paint(Graphics g) {
@@ -36,8 +41,9 @@ public class Legos1 extends JFrame{
 		    this.startX = this.startX + legoWidth/2;
 		    this.baseLength = this.baseLength - 1;
 	    }  
-	 }	
+	 }
 	
+		
 	 public static void main(String[] args) {
 		//part1.c
 	    Legos1 lego = new Legos1();
@@ -45,5 +51,26 @@ public class Legos1 extends JFrame{
 	    lego.setVisible(true);
 	    lego.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	 }
+	 
+	public void mouseClicked(MouseEvent e) {
+		System.out.println(e.toString());
+		
+	}
+	public void mousePressed(MouseEvent e) {
+		System.out.println(e.toString());
+		
+	}
+	public void mouseReleased(MouseEvent e) {
+		System.out.println(e.toString());
+		
+	}
+	public void mouseEntered(MouseEvent e) {
+		System.out.println(e.toString());
+		
+	}
+	public void mouseExited(MouseEvent e) {
+		System.out.println(e.toString());
+		repaint();
+	}
 
 }
