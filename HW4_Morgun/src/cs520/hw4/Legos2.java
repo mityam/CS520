@@ -29,21 +29,22 @@ public class Legos2 extends JFrame{
 	public void paint(Graphics g) {
 		    super.paint(g);
 		    
-		int verticalBlocksNumber = this.baseLength;
-			
-	    for  (int i = 1; i <= verticalBlocksNumber; i++)
-	    {	
-	    	int  horizontalShiftX = this.startX;
-	    	for (int j = 1; j <= this.baseLength; j++)
-		    {
+		    int verticalShiftY = this.startY;
+		    int horizontalLength = this.baseLength;
+		  	
+		    for  (int i = 1; i <= this.baseLength; i++)
+		    {	
+		    	int horizontalShiftX =  this.startX + legoWidth/2 * (i-1);
+		    	
+		    	for (int j = 1; j <= horizontalLength; j++)
+			    {
 		    	//Use the length of the colors array as an argument (do not hard code the array length)
 	    		g.setColor(this.colorsArray[rand.nextInt(colorsArray.length)]);
-		      	g.fillRoundRect(horizontalShiftX, this.startY, this.legoWidth, this.legoHeight, 5, 5);
+	    		g.fillRoundRect(horizontalShiftX, verticalShiftY, this.legoWidth, this.legoHeight, 5, 5);
 		      	horizontalShiftX = horizontalShiftX + this.legoWidth;
 		    }
-		    this.startY = this.startY - this.legoHeight;
-		    this.startX = this.startX + legoWidth/2;
-		    this.baseLength = this.baseLength - 1;
+	    	verticalShiftY = verticalShiftY - this.legoHeight;
+		    horizontalLength = horizontalLength - 1;
 	    }  
 	 }	
 	
