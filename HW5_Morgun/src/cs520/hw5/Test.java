@@ -10,37 +10,39 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-//import cs520.hw3.part2.Student;
 
 public class Test {
 
 	public static void main(String[] args) throws IOException {
 		
+		//part 2.a
 		Queue<Student> studentQueue = new LinkedList<>();
+		//part 2.b
 		HashMap<String, Student> studentMap = new HashMap<String, Student>();
-	
-		
-		//part2.2.a
-				BufferedReader bufferedReader;
-				bufferedReader = new BufferedReader(new FileReader("data.txt"));
-				
-				//part2.2.a
-				System.out.println("Input File Processing...");
-				String line;
-				while ((line = bufferedReader.readLine()) != null)
-				{
-					studentQueue.add(processInputData(line));
-					studentMap.put(processInputData(line).getName(), processInputData(line));
-					System.out.println(processInputData(line));
-				}
+		//part 2.c
+		BufferedReader bufferedReader;
+		bufferedReader = new BufferedReader(new FileReader("data.txt"));
+		//part 2.d
+		System.out.println("Input file processing...");
+		String line;
+		//part 2.d.1
+		while ((line = bufferedReader.readLine()) != null)
+		{
+			Student currentStudent = processInputData(line); 
+			//part 2.d.2
+			studentQueue.add(currentStudent);
+			//part 2.d.3
+			studentMap.put(currentStudent.getName(), currentStudent);
+		}
 		bufferedReader.close();
-		System.out.println("Iterating over student queue...");
+		//part 2.d.e.1
+		System.out.println("\nIterating over the student list...");
 		for (Student item: studentQueue) 
 		{
 			System.out.println(item);
 		}
-		
-		System.out.println("Iterating over HashMap...");
+		//part 2.d.e.2
+		System.out.println("\nIterating the student map...");
 		Set<String> nameKeys = studentMap.keySet();
 		Iterator <String> nameIterator = nameKeys.iterator();
 		while (nameIterator.hasNext())
@@ -52,28 +54,19 @@ public class Test {
 	private static Student processInputData(String value)
 
 	{
-		//part2.2.c.1
+		//part 2.1
 		StringTokenizer tokenizer = new StringTokenizer(value, ",");
-		//part2.2.c.2
+		//part 2.2
 		Student currentStudent = new Student(tokenizer.nextToken());
-		
-		//part2.2.c.3
-		/*
-		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
-		*/
+		//part2.3
 		while (tokenizer.hasMoreTokens())
 		{
 			currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
 		}
-		
-		//part2.2.c.4
+		//part2.4
+		System.out.println(currentStudent.toString());
+		//part2.5
 		return currentStudent;
-		
 	}
 	
 	
