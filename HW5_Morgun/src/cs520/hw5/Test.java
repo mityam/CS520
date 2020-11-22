@@ -58,13 +58,19 @@ public class Test {
 		Student currentStudent = new Student(tokenizer.nextToken());
 		
 		//part2.2.c.3
-		/*currentStudent.setHomework1(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.setHomework2(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.setHomework3(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.setHomework4(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.setHomework5(Integer.parseInt(tokenizer.nextToken()));
-		currentStudent.setHomework6(Integer.parseInt(tokenizer.nextToken()));
+		/*
+		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
+		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
+		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
+		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
+		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
+		currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
 		*/
+		while (tokenizer.hasMoreTokens())
+		{
+			currentStudent.addHomeworkGrade(Integer.parseInt(tokenizer.nextToken()));
+		}
+		
 		//part2.2.c.4
 		return currentStudent;
 		
