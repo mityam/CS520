@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 //import cs520.hw3.part2.Student;
@@ -36,6 +38,14 @@ public class Test {
 		for (Student item: studentQueue) 
 		{
 			System.out.println(item);
+		}
+		
+		System.out.println("Iterating over HashMap...");
+		Set<String> nameKeys = studentMap.keySet();
+		Iterator <String> nameIterator = nameKeys.iterator();
+		while (nameIterator.hasNext())
+		{
+			System.out.println(studentMap.get(nameIterator.next()));
 		}
 	}
 
