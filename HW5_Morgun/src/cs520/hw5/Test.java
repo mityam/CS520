@@ -10,12 +10,11 @@ public class Test {
 		
 		
 		Queue<Student> studentQueue = new LinkedList<>();;
-		//HashMap<Integer, String> hmap = new HashMap<Integer, String>(); 
+		
 		HashMap<String, Student> studentMap = new HashMap<String, Student>();
 	
 		
-		int n = 100;
-		String myArray[] = new String[n];
+		
 		
 	}
 
