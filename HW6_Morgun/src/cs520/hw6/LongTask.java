@@ -31,17 +31,17 @@ public class LongTask extends Thread{
 	//part 2.c
 	public void run()
 	{
-		int fakeCounter = 0;
-		for (int i=0; i < 10; i++)
+		int Counter = 0;
+		for (int i = this.start; i <= this.end; i++)
 		{
-			fakeCounter = this.start + this.end;
+			Counter = Counter + i;
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		sharedData.addToResult(fakeCounter);
+		sharedData.addToResult(Counter);
 	}
 	
 }

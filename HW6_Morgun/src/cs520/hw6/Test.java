@@ -12,16 +12,44 @@ public class Test {
 	 */
 	public static void main(String[] args) {
 		
+		//part 3.a
 		SharedResults sharedResultsObj = new SharedResults();
 		
-		LongTask longTaskObj1 = new LongTask (sharedResultsObj, 1, 100);
-		LongTask longTaskObj2 = new LongTask (sharedResultsObj, 101, 200);
-		LongTask longTaskObj3 = new LongTask (sharedResultsObj, 201, 300);
-		LongTask longTaskObj4 = new LongTask (sharedResultsObj, 301, 400);
-		LongTask longTaskObj5 = new LongTask (sharedResultsObj, 401, 500);
+		//part 3.b
+		Thread longTaskObj1 = new LongTask (sharedResultsObj, 1, 100);
+		//part 3.c
+		longTaskObj1.start();
+		//part 3.b
+		Thread longTaskObj2 = new LongTask (sharedResultsObj, 101, 200);
+		//part 3.c
+		longTaskObj2.start();
+		//part 3.b
+		Thread longTaskObj3 = new LongTask (sharedResultsObj, 201, 300);
+		//part 3.c
+		longTaskObj3.start();
+		//part 3.b
+		Thread longTaskObj4 = new LongTask (sharedResultsObj, 301, 400);
+		//part 3.c
+		longTaskObj4.start();
+		//part 3.b
+		Thread longTaskObj5 = new LongTask (sharedResultsObj, 401, 500);
+		//part 3.c
+		longTaskObj5.start();
 		
+		//part 3.d
+		try {
+			longTaskObj1.join();
+			longTaskObj2.join();
+			longTaskObj3.join();
+			longTaskObj4.join();
+			longTaskObj5.join();
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
-		System.out.println(sharedResultsObj.getResult());
+		//part 3.e
+		System.out.println("Result = " + sharedResultsObj.getResult());
 
 	}
 

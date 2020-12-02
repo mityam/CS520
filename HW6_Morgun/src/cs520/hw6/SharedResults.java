@@ -29,5 +29,4 @@ public class SharedResults {
 	{
 		return this.result;
 	}
-
 }
