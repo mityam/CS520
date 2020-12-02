@@ -16,16 +16,16 @@ public class SharedResults {
 	private int result;
 	
 	//part 1.b
-	void addToResult (int value)
+	synchronized void addToResult (int value)
 	{
 		this.result =  this.result + value;
-		System.out.println("Thread name"  + Thread.currentThread().getName() +  "is adding value" + value
+		System.out.println(Thread.currentThread().getName() +  " is adding value " + value
 				+ ", Cumulative result is " + this.result);
 		
 	}
 	
 	//part 1.c
-	int getResult()
+	synchronized int getResult()
 	{
 		return this.result;
 	}
