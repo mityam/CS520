@@ -19,7 +19,7 @@ public class SharedResults {
 	void addToResult (int value)
 	{
 		this.result =  this.result + value;
-		System.out.println("Thread name"  + "placeholder" +  "is adding value" + value
+		System.out.println("Thread name"  + Thread.currentThread().getName() +  "is adding value" + value
 				+ ", Cumulative result is " + this.result);
 		
 	}
