@@ -21,6 +21,7 @@ public class SharedResults {
 		this.result =  this.result + value;
 		System.out.println("Thread name"  + "placeholder" +  "is adding value" + value
 				+ ", Cumulative result is " + this.result);
+		
 	}
 	
 	//part 1.c

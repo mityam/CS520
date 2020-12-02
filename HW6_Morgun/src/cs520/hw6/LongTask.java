@@ -25,12 +25,23 @@ public class LongTask extends Thread{
 		this.start = startValue;
 		this.end = endValue;
 		String threadName = "Thread_" + this.start + "_" + this.end;
-		
+		this.setName(threadName);
 	}
 	
+	//part 2.c
 	public void run()
 	{
-		
+		int fakeCounter = 0;
+		for (int i=0; i < 10; i++)
+		{
+			fakeCounter = this.start + this.end;
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		sharedData.addToResult(fakeCounter);
 	}
 	
 }
