@@ -41,7 +41,7 @@ public class LongTask extends Thread{
 				e.printStackTrace();
 			}
 		}
-		sharedData.addToResult(Counter);
+		this.sharedData.addToResult(Counter);
 	}
 	
 }

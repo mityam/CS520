@@ -14,7 +14,6 @@ public class Test {
 		
 		//part 3.a
 		SharedResults sharedResultsObj = new SharedResults();
-		
 		//part 3.b
 		Thread longTaskObj1 = new LongTask (sharedResultsObj, 1, 100);
 		//part 3.c
