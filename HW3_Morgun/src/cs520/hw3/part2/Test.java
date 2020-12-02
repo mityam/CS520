@@ -22,6 +22,7 @@ public class Test {
 			//part2.2.c.4
 			System.out.println(processInputData(line));
 		}
+		bufferedReader.close();
 	}
 	
 	catch (FileNotFoundException e)
