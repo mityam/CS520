@@ -27,7 +27,7 @@ public class Shipping {
 		// You need to read each row in the ShippingEvents file and process the incoming ships and any trucks that are picking up containers. 
 		// For each ship, you need to load the containers into the dockyard. This means you need to create a class that implements
 		
-		/* Uncomment this section to start your work
+		//* Uncomment this section to start your work 
 
 		String inputFileName = "ShippingEvents.txt";
 
@@ -37,7 +37,7 @@ public class Shipping {
 		
 		processor.processEvents("ShippingEvents");	
 		
-		*/
+		//*/
 		
 	}
 	 
