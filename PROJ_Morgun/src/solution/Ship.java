@@ -41,7 +41,14 @@ public class Ship implements IShip{
 		
 	}
 
-	
+	/**
+	 * Returns a list of the containers that are on the ship.  
+	 * <p>
+	 * @return A list of containers currently on the ship.
+	 * @see List
+	 * @see IContainer
+	 */
+
 	public List<IContainer> containers() {
 		
 		return null;
@@ -55,7 +62,7 @@ public class Ship implements IShip{
 
 	
 	public void printDetails() {
-		
+		System.out.println("Ship " + this.registrationID);
 		
 	}
 

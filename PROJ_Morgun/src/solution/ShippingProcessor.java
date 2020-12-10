@@ -25,7 +25,7 @@ public class ShippingProcessor extends ShippingProcessorBase{
 
 	@Override
 	protected IShip processShip(String registration) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
