@@ -20,6 +20,7 @@ public class Ship implements IShip{
 	 * <p>
 	 * @return A string value indicating the ship's registration id.
 	 */
+	@Override
 	public String getRegistration() {
 		
 		return this.registrationID;
@@ -30,12 +31,13 @@ public class Ship implements IShip{
 	 * <p>
 	 * @param id A string value indicating the ship's registration id.
 	 */
+	@Override
 	public void setRegistration(String id) {
 		this.registrationID  = id;
 		
 	}
 
-	
+	@Override
 	public void addContainer(IContainer container) {
 		
 		
@@ -48,19 +50,19 @@ public class Ship implements IShip{
 	 * @see List
 	 * @see IContainer
 	 */
-
+	@Override
 	public List<IContainer> containers() {
 		
 		return null;
 	}
 
-	
+	@Override
 	public List<IContainer> offload() {
 		
 		return null;
 	}
 
-	
+	@Override
 	public void printDetails() {
 		System.out.println("Ship " + this.registrationID);
 		
