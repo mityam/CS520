@@ -1,15 +1,21 @@
 package solution;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import shipping.IContainer;
 import shipping.IDockyard;
 import shipping.ITruck;
 
 
 public class Dockyard implements IDockyard {
-
+	
+	private Queue<IContainer> dockQueue = new LinkedList<>();
+	//private HashMap<String, IContainer> studentMap = new HashMap<String, IContainer>();
+	
+	
 	@Override
 	public void addContainer(IContainer container) {
-		// TODO Auto-generated method stub
-
+		this.dockQueue.add(container);
 	}
 
 	@Override
@@ -20,8 +26,7 @@ public class Dockyard implements IDockyard {
 
 	@Override
 	public int containerCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.dockQueue.size();
 	}
 
 	@Override
@@ -32,8 +37,7 @@ public class Dockyard implements IDockyard {
 
 	@Override
 	public void printDetails() {
-		// TODO Auto-generated method stub
-
+		System.out.println("The dockyard contains " + containerCount() + " containers.");
 	}
 
 }
