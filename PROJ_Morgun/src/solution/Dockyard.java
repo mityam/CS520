@@ -10,7 +10,6 @@ import shipping.ITruck;
 public class Dockyard implements IDockyard {
 	
 	private Queue<IContainer> dockQueue = new LinkedList<>();
-	//private HashMap<String, IContainer> studentMap = new HashMap<String, IContainer>();
 	
 	
 	@Override

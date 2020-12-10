@@ -1,6 +1,8 @@
 package solution;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import shipping.IContainer;
 import shipping.IShip;
@@ -8,29 +10,20 @@ import shipping.IShip;
 public class Ship implements IShip{
 	
 	private String registrationID;
-
+	private List<IContainer> containerList = new LinkedList<>();
+	
 	public Ship() {}
 
 	public Ship(String id) {
 		this.setRegistration(id);
 	}
 	
-	/**
-	 * Returns the ship's unique registration id.  
-	 * <p>
-	 * @return A string value indicating the ship's registration id.
-	 */
+	
 	@Override
 	public String getRegistration() {
 		
 		return this.registrationID;
 	}
-
-	/**
-	 * Sets the ship's unique registration id.  
-	 * <p>
-	 * @param id A string value indicating the ship's registration id.
-	 */
 	@Override
 	public void setRegistration(String id) {
 		this.registrationID  = id;
@@ -42,29 +35,25 @@ public class Ship implements IShip{
 		
 		
 	}
-
-	/**
-	 * Returns a list of the containers that are on the ship.  
-	 * <p>
-	 * @return A list of containers currently on the ship.
-	 * @see List
-	 * @see IContainer
-	 */
+	
 	@Override
 	public List<IContainer> containers() {
-		
-		return null;
+		return this.containerList;
 	}
 
 	@Override
 	public List<IContainer> offload() {
+		System.out.println("Before unloading: ");
+		this.printDetails();
 		
-		return null;
+		System.out.println("After unloading: ");
+		this.printDetails();
+		return this.containerList;
 	}
 
 	@Override
 	public void printDetails() {
-		System.out.println("Ship " + this.registrationID);
+		System.out.print("Ship " + this.registrationID + " has " + this.containers().size() + ".\n");
 		
 	}
 

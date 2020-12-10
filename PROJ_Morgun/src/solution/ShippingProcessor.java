@@ -13,7 +13,7 @@ public class ShippingProcessor extends ShippingProcessorBase{
 
 	@Override
 	protected List<IContainer> readManifest(String shipId) {
-		// TODO Auto-generated method stub
+		// TODO queue of Containers to add here
 		return null;
 	}
 
@@ -26,7 +26,10 @@ public class ShippingProcessor extends ShippingProcessorBase{
 	@Override
 	protected IShip processShip(String registration) {
 		
-		return null;
+		Ship myShip = new Ship(registration);
+		myShip.offload();
+		
+		return myShip;
 	}
 
 }
