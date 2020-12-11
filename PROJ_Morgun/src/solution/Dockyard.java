@@ -1,5 +1,4 @@
 package solution;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -25,15 +24,10 @@ public class Dockyard implements IDockyard {
 		{
 			if (truck.destinationCity().equalsIgnoreCase(container.destinationCity()) )
 					{
-						//this is an issue here taking next container from the queue instead of taking
-						//corresponding dest City container
-						//truck.addContainer(this.dockQueue.poll());
 						truck.addContainer(container);
-						this.dockQueue.remove();
-						
+						this.dockQueue.remove(container);
 						return true;
 					}
-			//this.dockQueue.peek();
 		}
 		return false;
 	}

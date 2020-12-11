@@ -7,7 +7,6 @@ public class Truck implements ITruck {
 	
 	private String registrationID;
 	private String destinationCity;
-	//private boolean hasContainer;
 	private IContainer myContainer;
 	
 	public Truck (String registration, String destination)
