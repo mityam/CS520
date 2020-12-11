@@ -53,7 +53,7 @@ public class ShippingProcessor extends ShippingProcessorBase{
 
 	@Override
 	protected void processTruck(String registration, String destination) {
-		// TODO Auto-generated method stub
+		Truck myTruck = new Truck(registration, destination);
 		
 	}
 

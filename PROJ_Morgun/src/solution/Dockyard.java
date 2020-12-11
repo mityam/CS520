@@ -1,5 +1,6 @@
 package solution;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import shipping.IContainer;
@@ -10,11 +11,12 @@ import shipping.ITruck;
 public class Dockyard implements IDockyard {
 	
 	private Queue<IContainer> dockQueue = new LinkedList<>();
-	
-	
+	private HashSet<String> cities = new HashSet<String>();
+ 	
 	@Override
 	public void addContainer(IContainer container) {
 		this.dockQueue.add(container);
+		this.cities.add(container.destinationCity());
 	}
 
 	@Override
@@ -30,13 +32,24 @@ public class Dockyard implements IDockyard {
 
 	@Override
 	public int containerCount(String destinationCity) {
-		// TODO Auto-generated method stub
-		return 0;
+		int counter = 0;
+		for (IContainer container : this.dockQueue )
+		{
+			if ( destinationCity.equalsIgnoreCase(container.destinationCity()))
+				counter++;
+		}
+		return counter;
 	}
 
 	@Override
 	public void printDetails() {
 		System.out.println("The dockyard contains " + containerCount() + " containers.");
+		
+		for (String city : cities )
+		{
+			System.out.println (city + ":" + this.containerCount(city));
+		}
+		
 	}
 
 }

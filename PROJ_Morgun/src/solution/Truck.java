@@ -4,17 +4,24 @@ import shipping.IContainer;
 import shipping.ITruck;
 
 public class Truck implements ITruck {
+	
+	private String registrationID;
+	private String destinationCity;
+	
+	public Truck (String registration, String destination)
+	{
+		this.registrationID = registration;
+		this.destinationCity = destination;
+	}
 
 	@Override
 	public String registration() {
-		// TODO Auto-generated method stub
-		return null;
+		return  this.registrationID;
 	}
 
 	@Override
 	public String destinationCity() {
-		// TODO Auto-generated method stub
-		return null;
+		return  this.destinationCity;
 	}
 
 	@Override

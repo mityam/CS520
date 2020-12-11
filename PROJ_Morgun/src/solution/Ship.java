@@ -43,17 +43,17 @@ public class Ship implements IShip{
 
 	@Override
 	public List<IContainer> offload() {
-		System.out.println("Before unloading: ");
+		System.out.print("Before unloading: ");
 		this.printDetails();
 		this.containerList.clear();
-		System.out.println("After unloading: ");
+		System.out.print("After unloading: ");
 		this.printDetails();
 		return this.containerList;
 	}
 
 	@Override
 	public void printDetails() {
-		System.out.print("Ship " + this.registrationID + " has " + this.containers().size() + ".\n");
+		System.out.print("Ship " + this.registrationID + " has " + this.containers().size() + " containers.\n");
 		
 	}
 
