@@ -13,7 +13,6 @@ import shipping.*;
 public class ShippingProcessor extends ShippingProcessorBase{
 
 	public ShippingProcessor(IDockyard dockyard) {
-		// TODO Auto-generated constructor stub
 		super(dockyard);
 	}
 
@@ -32,18 +31,12 @@ public class ShippingProcessor extends ShippingProcessorBase{
 
 		BufferedReader reader = new BufferedReader(fileReader);
 		String input;
-
-		// Read each event and process it
 		try {
 			input = reader.readLine();
 			while (input != null)
 			{
-				//StringTokenizer st = new StringTokenizer(input, ",");
-				//String shipToken = st.nextToken();
 				containerList.add(new Container(input));
 				input = reader.readLine();
-				//processShippingEvent(input);
-				//input = reader.readLine();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -69,8 +62,12 @@ public class ShippingProcessor extends ShippingProcessorBase{
 		
 		Ship myShip = new Ship(registration, this.readManifest(registration));
 		
+		for(IContainer container: myShip.containers() )
+		{
+			this.getDockyard().addContainer(container);
+		}
+		//myShip.containers();
 		myShip.offload();
-		
 		return myShip;
 	}
 

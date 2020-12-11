@@ -45,7 +45,7 @@ public class Ship implements IShip{
 	public List<IContainer> offload() {
 		System.out.println("Before unloading: ");
 		this.printDetails();
-		
+		this.containerList.clear();
 		System.out.println("After unloading: ");
 		this.printDetails();
 		return this.containerList;
