@@ -21,7 +21,14 @@ public class Dockyard implements IDockyard {
 
 	@Override
 	public boolean loadTruck(ITruck truck) {
-		// TODO Auto-generated method stub
+		for(IContainer container: this.dockQueue )
+		{
+			if (truck.destinationCity().equalsIgnoreCase(container.destinationCity()) )
+					{
+						truck.addContainer(this.dockQueue.poll());
+						return true;
+					}
+		}
 		return false;
 	}
 

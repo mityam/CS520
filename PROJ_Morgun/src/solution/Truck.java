@@ -7,6 +7,8 @@ public class Truck implements ITruck {
 	
 	private String registrationID;
 	private String destinationCity;
+	private boolean hasContainer;
+	private IContainer myContainer;
 	
 	public Truck (String registration, String destination)
 	{
@@ -26,7 +28,11 @@ public class Truck implements ITruck {
 
 	@Override
 	public boolean addContainer(IContainer container) {
-		// TODO Auto-generated method stub
+		if (!hasContainer())
+		{
+			this.myContainer = container;
+			return true;
+		}
 		return false;
 	}
 
@@ -38,14 +44,14 @@ public class Truck implements ITruck {
 
 	@Override
 	public boolean hasContainer() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.hasContainer;
 	}
 
 	@Override
 	public void printDetails() {
-		// TODO Auto-generated method stub
-
+		System.out.print("Truck " + this.registrationID + " is headed to " + this.destinationCity
+				+ " with " + this.myContainer.id() + ".\n");
+		
 	}
 
 }
