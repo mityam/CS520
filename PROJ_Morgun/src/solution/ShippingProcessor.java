@@ -54,8 +54,9 @@ public class ShippingProcessor extends ShippingProcessorBase{
 	@Override
 	protected void processTruck(String registration, String destination) {
 		Truck myTruck = new Truck(registration, destination);
-		
+		myTruck.printDetails();
 		this.getDockyard().loadTruck(myTruck);
+		myTruck.printDetails();
 	}
 
 	@Override

@@ -25,9 +25,15 @@ public class Dockyard implements IDockyard {
 		{
 			if (truck.destinationCity().equalsIgnoreCase(container.destinationCity()) )
 					{
-						truck.addContainer(this.dockQueue.poll());
+						//this is an issue here taking next container from the queue instead of taking
+						//corresponding dest City container
+						//truck.addContainer(this.dockQueue.poll());
+						truck.addContainer(container);
+						this.dockQueue.remove();
+						
 						return true;
 					}
+			//this.dockQueue.peek();
 		}
 		return false;
 	}
