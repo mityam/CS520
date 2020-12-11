@@ -8,7 +8,6 @@ import shipping.IContainer;
 
 public class Container implements IContainer {
 	
-	//private HashMap<String, String> containerList = new HashMap<String, String>();
 	private String containerID, containerCity, containerDescription;
 
 	public Container (String description) 

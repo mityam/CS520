@@ -2,8 +2,6 @@ package solution;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
-
 import shipping.IContainer;
 import shipping.IShip;
 
@@ -46,7 +44,7 @@ public class Ship implements IShip{
 		System.out.print("Before unloading: ");
 		this.printDetails();
 		this.containerList.clear();
-		System.out.print("After unloading: ");
+		System.out.print("After unloading:  ");
 		this.printDetails();
 		return this.containerList;
 	}

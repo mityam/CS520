@@ -37,7 +37,10 @@ public class Truck implements ITruck {
 
 	@Override
 	public IContainer offloadContainer() {
+		System.out.print("\nBefore loading: ");
 		this.printDetails();
+		if (hasContainer())
+			return this.myContainer;
 		return null;
 	}
 
@@ -51,10 +54,11 @@ public class Truck implements ITruck {
 	@Override
 	public void printDetails() {
 		String containerID;
+		
 		if (hasContainer())
-		{ containerID = this.myContainer.id();}
+		{ containerID = "container " + this.myContainer.id();}
 		else
-		{ containerID = "no";}	
+		{ containerID = "no container";}	
 			
 		System.out.print("Truck " + this.registrationID + " is headed to " + this.destinationCity
 				+ " with " + containerID + ".\n");

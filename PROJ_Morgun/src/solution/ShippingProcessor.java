@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import shipping.*;
 
@@ -54,21 +53,19 @@ public class ShippingProcessor extends ShippingProcessorBase{
 	@Override
 	protected void processTruck(String registration, String destination) {
 		Truck myTruck = new Truck(registration, destination);
-		myTruck.printDetails();
+		myTruck.offloadContainer();
 		this.getDockyard().loadTruck(myTruck);
+		System.out.print("After loading:  ");
 		myTruck.printDetails();
 	}
 
 	@Override
 	protected IShip processShip(String registration) {
-		
 		Ship myShip = new Ship(registration, this.readManifest(registration));
-		
 		for(IContainer container: myShip.containers() )
 		{
 			this.getDockyard().addContainer(container);
 		}
-		//myShip.containers();
 		myShip.offload();
 		return myShip;
 	}

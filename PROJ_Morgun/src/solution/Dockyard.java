@@ -54,9 +54,9 @@ public class Dockyard implements IDockyard {
 		
 		for (String city : cities )
 		{
-			System.out.println (city + ":" + this.containerCount(city));
+			System.out.printf ("%12s%n", city + ":" + this.containerCount(city));
 		}
-		
+		System.out.println("");
 	}
 
 }
