@@ -14,8 +14,9 @@ public class Ship implements IShip{
 	
 	public Ship() {}
 
-	public Ship(String id) {
+	public Ship(String id, List<IContainer> containers) {
 		this.setRegistration(id);
+		this.containerList = containers;
 	}
 	
 	
@@ -32,8 +33,7 @@ public class Ship implements IShip{
 
 	@Override
 	public void addContainer(IContainer container) {
-		
-		
+		this.containerList.add(container);
 	}
 	
 	@Override

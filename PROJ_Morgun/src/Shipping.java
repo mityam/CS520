@@ -29,7 +29,7 @@ public class Shipping {
 		
 		//* Uncomment this section to start your work 
 
-		String inputFileName = "ShippingEvents.txt";
+		//String inputFileName = "ShippingEvents.txt";
 
 		IDockyard dockyard = new Dockyard();  // need to instantiate an object of your class
 				
