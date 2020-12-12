@@ -11,6 +11,9 @@ import shipping.*;
 
 public class ShippingProcessor extends ShippingProcessorBase{
 
+	//it isn't a good practice to hardcode filename here but we have no choice
+	private String manifestFilename = "-Manifest";
+	
 	public ShippingProcessor(IDockyard dockyard) {
 		super(dockyard);
 	}
@@ -21,7 +24,7 @@ public class ShippingProcessor extends ShippingProcessorBase{
 		List<IContainer> containerList = new LinkedList<>();
 				
 		FileReader fileReader = null;
-		String fileName = shipId + "-Manifest";
+		String fileName = shipId + manifestFilename;
 		try {
 			fileReader = new FileReader(fileName);
 		} catch (FileNotFoundException e) {
